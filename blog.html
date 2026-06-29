@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Alliance Educational Consult Ghana</title>
+  <meta name="description" content="Honest guidance for Ghanaian students planning to study abroad — visa documentation, destination comparisons, real costs, and how to choose the right agent."/>
+  <link rel="canonical" href="https://allianceeducationalconsult.com/blog"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .page-hero {
+      position:relative; overflow:hidden;
+      padding:clamp(80px,10vh,130px) clamp(24px,5vw,76px) clamp(60px,8vh,96px);
+      background:
+        linear-gradient(160deg, rgba(6,23,37,.94) 0%, rgba(13,99,100,.82) 55%, rgba(6,22,32,.96) 100%),
+        url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .page-hero::after { content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,23,37,.55) 0%,transparent 55%); }
+    .page-hero-inner { max-width:1460px;margin:0 auto;position:relative;z-index:1; }
+    .page-tag { display:inline-flex;align-items:center;gap:8px;background:rgba(43,191,189,.14);border:1px solid rgba(43,191,189,.36);color:var(--teal);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:7px 14px;border-radius:2px;margin-bottom:24px; }
+    .page-hero h1 { font-family:Sora,sans-serif;font-size:clamp(44px,6vw,86px);font-weight:800;color:white;text-transform:uppercase;letter-spacing:.04em;line-height:.92;max-width:760px; }
+    .page-hero h1 em { font-style:normal;color:var(--teal); }
+    .page-hero p { margin-top:24px;font-size:clamp(15px,1.2vw,18px);line-height:1.72;color:rgba(255,255,255,.68);max-width:520px; }
+
+    .blog-section { padding:clamp(64px,8vw,96px) clamp(24px,5vw,76px); background:var(--ivory); }
+    .blog-inner { max-width:1460px; margin:0 auto; }
+
+    .featured-article {
+      display:grid; grid-template-columns:1.2fr 1fr; gap:0;
+      background:white; margin-bottom:3px;
+      box-shadow:0 4px 24px rgba(6,23,37,.07);
+      overflow:hidden;
+    }
+    .featured-img {
+      position:relative; overflow:hidden; min-height:420px;
+      background:
+        linear-gradient(160deg, rgba(6,23,37,.82) 0%, rgba(13,99,100,.7) 100%),
+        url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+    }
+    .featured-img-label {
+      position:absolute; top:24px; left:24px;
+      background:var(--gold); color:var(--navy);
+      font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+      padding:5px 10px; border-radius:1px;
+    }
+    .featured-content { padding:clamp(36px,4vw,56px); display:flex; flex-direction:column; justify-content:center; }
+    .blog-cat { font-size:11px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:var(--teal-mid); margin-bottom:14px; }
+    .featured-content h2 { font-family:Sora,sans-serif; font-size:clamp(24px,2.8vw,38px); font-weight:800; text-transform:uppercase; letter-spacing:.03em; line-height:1.04; color:var(--navy); margin-bottom:16px; }
+    .featured-content h2 em { font-style:normal; color:var(--teal-mid); }
+    .featured-content p { font-size:16px; line-height:1.75; color:var(--muted); margin-bottom:28px; }
+    .blog-meta { font-size:12px; color:#8a9daa; margin-bottom:20px; display:flex; gap:16px; flex-wrap:wrap; }
+    .read-link { display:inline-flex; align-items:center; gap:9px; font-size:14px; font-weight:800; color:var(--deep-teal); transition:gap .2s; }
+    .read-link:hover { gap:14px; }
+
+    .articles-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:3px; margin-top:3px; }
+    .article-card {
+      background:white; padding:clamp(24px,3vw,36px);
+      position:relative; overflow:hidden;
+      transition:transform .25s, box-shadow .25s;
+      display:flex; flex-direction:column;
+    }
+    .article-card::after { content:""; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--teal); transform:scaleX(0); transform-origin:left; transition:transform .35s ease; }
+    .article-card:hover { transform:translateY(-5px); box-shadow:0 20px 48px rgba(6,23,37,.1); }
+    .article-card:hover::after { transform:scaleX(1); }
+    .article-card .blog-cat { margin-bottom:12px; }
+    .article-card h3 { font-family:Sora,sans-serif; font-size:clamp(16px,1.4vw,19px); font-weight:800; text-transform:uppercase; letter-spacing:.03em; line-height:1.18; color:var(--navy); margin-bottom:12px; }
+    .article-card h3 em { font-style:normal; color:var(--teal-mid); }
+    .article-card p { font-size:14px; line-height:1.72; color:var(--muted); flex:1; margin-bottom:24px; }
+    .article-card .blog-meta { margin-bottom:16px; }
+
+    .cta-band { padding:clamp(64px,8vw,96px) clamp(24px,5vw,76px); background:var(--navy); text-align:center; position:relative; overflow:hidden; }
+    .cta-band::before { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(43,191,189,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(43,191,189,.04) 1px,transparent 1px); background-size:56px 56px; }
+    .cta-inner { max-width:580px; margin:0 auto; position:relative; z-index:1; }
+    .cta-band h2 { font-family:Sora,sans-serif;font-size:clamp(28px,4vw,50px);font-weight:800;text-transform:uppercase;letter-spacing:.04em;line-height:1.06;color:white;margin-bottom:14px; }
+    .cta-band h2 em { font-style:normal; color:var(--teal); }
+    .cta-band p { font-size:17px;line-height:1.72;color:rgba(255,255,255,.6);margin-bottom:32px; }
+    .cta-actions { display:flex;gap:14px;justify-content:center;flex-wrap:wrap; }
+
+    @media(max-width:1100px) { .articles-grid{grid-template-columns:repeat(2,1fr);} .featured-article{grid-template-columns:1fr;} .featured-img{min-height:280px;} }
+    @media(max-width:580px) { .articles-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="brand"><span class="mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span></a>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQs</a>
+    <a href="blog.html" style="color:var(--teal-mid)">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions"><a class="consult-btn" href="contact.html">Book Free Consultation →</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span></button></div>
+</header>
+<nav id="mobileNav" class="mobile-nav">
+  <a href="index.html">Home</a><a href="services.html">Services</a><a href="destinations.html">Destinations</a>
+  <a href="about.html">About</a><a href="faq.html">FAQs</a><a href="blog.html">Blog</a>
+  <a href="contact.html" class="cta-link">Book Free Consultation →</a>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-tag">Alliance Insights</div>
+      <h1>Honest guidance for students <em>planning to study abroad.</em></h1>
+      <p>Real information on visas, costs, documentation and destinations — written for Ghanaian students and families, not for search engines.</p>
+    </div>
+  </section>
+
+  <section class="blog-section">
+    <div class="blog-inner">
+
+      <!-- Featured article -->
+      <a href="blog-visa-refusal-reasons-ghana.html" class="featured-article" style="text-decoration:none;color:inherit;" aria-label="Read: Why Ghana students get refused student visas">
+        <div class="featured-img" role="img" aria-label="Students in a classroom">
+          <span class="featured-img-label">Must Read</span>
+        </div>
+        <div class="featured-content">
+          <span class="blog-cat">Visa Guidance</span>
+          <div class="blog-meta"><span>May 2026</span><span>8 min read</span></div>
+          <h2>Why Ghana students get refused student visas <em>and the specific mistakes we see most.</em></h2>
+          <p>The same documentation errors cause the majority of Ghanaian student visa refusals. They are specific, avoidable, and almost never explained clearly in the refusal letter.</p>
+          <span class="read-link">Read the article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Article grid -->
+      <div class="articles-grid">
+
+        <a href="blog-canada-vs-uk-ghana-students.html" class="article-card" style="text-decoration:none;color:inherit;">
+          <span class="blog-cat">Destination Guides</span>
+          <div class="blog-meta"><span>May 2026</span><span>10 min read</span></div>
+          <h3>Canada vs UK: which destination <em>actually makes sense</em> for Ghanaian students in 2026?</h3>
+          <p>Program length, total costs, visa requirements, work rights and post-study pathways — compared directly so you can decide on facts.</p>
+          <span class="read-link">Read the article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="blog-financial-documents-student-visa-ghana.html" class="article-card" style="text-decoration:none;color:inherit;">
+          <span class="blog-cat">Visa Documentation</span>
+          <div class="blog-meta"><span>May 2026</span><span>9 min read</span></div>
+          <h3>What visa officers <em>actually look for</em> in a Ghanaian student's financial documents.</h3>
+          <p>A bank balance is not enough. The specific evidence that makes financial documents credible — and the three patterns that cause most refusals.</p>
+          <span class="read-link">Read the article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="blog-real-cost-study-abroad-ghana-2026.html" class="article-card" style="text-decoration:none;color:inherit;">
+          <span class="blog-cat">Planning and Costs</span>
+          <div class="blog-meta"><span>May 2026</span><span>10 min read</span></div>
+          <h3>The real cost of studying abroad from Ghana <em>in 2026.</em></h3>
+          <p>Itemised cost tables for Canada and the UK, the costs families consistently miss, scholarship options, and a planning timeline that prevents financial problems.</p>
+          <span class="read-link">Read the article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="blog-how-to-choose-study-abroad-agent-ghana.html" class="article-card" style="text-decoration:none;color:inherit;">
+          <span class="blog-cat">Student Guidance</span>
+          <div class="blog-meta"><span>May 2026</span><span>9 min read</span></div>
+          <h3>How to choose a genuine study abroad agent in Ghana: <em>8 questions that reveal everything.</em></h3>
+          <p>What to ask before you pay anyone. The answers that distinguish a professional firm from one that will take your money and disappear.</p>
+          <span class="read-link">Read the article <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="cta-inner">
+      <span class="section-label light">Ready to start?</span>
+      <h2>Your first consultation is <em>free.</em></h2>
+      <p>Bring your questions. Leave with a clear picture of your options and next steps.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-gold">Book Free Consultation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="https://wa.me/233552020381" class="btn-teal" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-bottom-simple">
+    <div class="footer-brand-row"><a href="index.html" class="brand"><span class="mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span></a></div>
+    <p class="footer-links-row"><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="destinations.html">Destinations</a> · <a href="about.html">About</a> · <a href="agents.html">Agents</a> · <a href="faq.html">FAQs</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
+    <p class="footer-copy">© 2026 Alliance Educational Consult · <a href="tel:+233552020381">+233 552 020 381</a> · <a href="mailto:info@allianceeducationalconsult.com">info@allianceeducationalconsult.com</a></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/233552020381" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.14.562 4.148 1.546 5.879L0 24l6.29-1.524A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.213-3.733.905.944-3.635-.234-.374A9.818 9.818 0 0112 2.182c5.42 0 9.818 4.398 9.818 9.818S17.42 21.818 12 21.818z"/></svg></a>
+
+<script>
+  const menuBtn=document.getElementById('menuBtn'),mobileNav=document.getElementById('mobileNav');
+  menuBtn.addEventListener('click',()=>{const o=mobileNav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o);});
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+  document.addEventListener('click',e=>{if(mobileNav.classList.contains('open')&&!mobileNav.contains(e.target)&&!menuBtn.contains(e.target)){mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
+</script>
+</body>
+</html>

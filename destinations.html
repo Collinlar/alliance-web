@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Abroad Destinations | Canada, UK, USA, Australia | Alliance Educational Consult</title>
+  <meta name="description" content="Study in Canada, UK, USA, Australia, New Zealand or Ghana with Alliance Educational Consult. Expert visa documentation and admissions support from Accra, Ghana."/>
+  <link rel="canonical" href="https://allianceeducationalconsult.com/destinations"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* PHOTO HERO */
+    .page-hero {
+      position:relative; overflow:hidden;
+      padding:clamp(100px,12vh,160px) clamp(24px,5vw,76px) clamp(80px,10vh,120px);
+      background:
+        linear-gradient(160deg, rgba(6,23,37,.82) 0%, rgba(6,23,37,.72) 50%, rgba(6,22,32,.92) 100%),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .page-hero::after { content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,23,37,.6) 0%,transparent 55%); }
+    .page-hero-inner { max-width:1460px;margin:0 auto;position:relative;z-index:1; }
+    .page-tag { display:inline-flex;align-items:center;gap:8px;background:rgba(43,191,189,.14);border:1px solid rgba(43,191,189,.36);color:var(--teal);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:7px 14px;border-radius:2px;margin-bottom:24px; }
+    .page-hero h1 { font-family:Sora,sans-serif;font-size:clamp(48px,7vw,96px);font-weight:800;color:white;text-transform:uppercase;letter-spacing:.04em;line-height:.92;max-width:760px; }
+    .page-hero h1 em { font-style:normal;color:var(--teal); }
+    .page-hero p { margin-top:28px;font-size:clamp(16px,1.3vw,19px);line-height:1.72;color:rgba(255,255,255,.72);max-width:540px; }
+
+    /* DESTINATION FLAGS STRIP */
+    .dest-flags { background:var(--navy-2); padding:18px clamp(24px,5vw,76px); border-bottom:1px solid rgba(43,191,189,.12); }
+    .dest-flags-inner { max-width:1460px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,36px); }
+    .flag-group { display:flex;flex-direction:column;gap:8px; }
+    .flag-group-label { font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35); }
+    .flag-group-items { display:flex;align-items:center;gap:clamp(14px,2vw,24px);flex-wrap:wrap; }
+    .flag-item { display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:rgba(255,255,255,.6);transition:color .2s;cursor:default; }
+    .flag-item span { font-size:20px; }
+    .flag-item.active { color:var(--teal); }
+
+    /* REGION BLOCKS */
+    .region-block { margin-top:clamp(48px,6vw,72px); }
+    .region-block:first-of-type { margin-top:0; }
+    .region-heading { margin-bottom:clamp(24px,3vw,36px); }
+    .dest-small-grid.two-col { grid-template-columns:repeat(2,1fr); }
+
+    /* DESTINATIONS */
+    .dest-section { padding:clamp(72px,9vw,112px) clamp(24px,5vw,76px);background:var(--ivory); }
+    .dest-inner { max-width:1460px;margin:0 auto; }
+
+    .dest-card-full { display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:3px;overflow:hidden;box-shadow:0 8px 32px rgba(6,23,37,.1); }
+    .dest-card-full.reverse { direction:rtl; }
+    .dest-card-full.reverse>* { direction:ltr; }
+    .dest-img-panel { position:relative;overflow:hidden;min-height:420px; }
+    .dest-img-panel img { width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1); }
+    .dest-img-overlay { position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,23,37,.3) 0%,transparent 60%); }
+    .dest-card-full:hover .dest-img-panel img { transform:scale(1.05); }
+    .dest-content-panel { background:white;padding:clamp(36px,4.5vw,60px);display:flex;flex-direction:column;justify-content:center; }
+    .dest-badge { display:inline-block;background:var(--teal);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:2px;margin-bottom:16px;align-self:flex-start; }
+    .dest-badge.gold { background:var(--gold); }
+    .dest-content-panel h2 { font-family:Sora,sans-serif;font-size:clamp(32px,4vw,52px);font-weight:800;text-transform:uppercase;letter-spacing:.04em;line-height:1.02;color:var(--navy);margin-bottom:14px; }
+    .dest-content-panel p { font-size:15px;line-height:1.78;color:var(--muted);margin-bottom:14px; }
+    .dest-facts { display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 28px; }
+    .fact-item { background:var(--ivory);padding:13px 15px;border-radius:2px;border-left:2px solid rgba(43,191,189,.3); }
+    .fact-item strong { display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--teal-mid);margin-bottom:4px; }
+    .fact-item span { font-size:14px;color:var(--navy);font-weight:500; }
+
+    /* SMALL DESTINATIONS */
+    .dest-small-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:3px; }
+    .dest-small { position:relative;overflow:hidden;cursor:pointer; }
+    .dest-small-img { aspect-ratio:4/3;overflow:hidden; }
+    .dest-small-img img { width:100%;height:100%;object-fit:cover;transition:transform .55s ease; }
+    .dest-small:hover .dest-small-img img { transform:scale(1.08); }
+    .dest-small-overlay { position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(6,23,37,.88) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px; }
+    .dest-small-overlay h3 { font-family:Sora,sans-serif;font-size:clamp(20px,2.2vw,28px);font-weight:800;color:white;text-transform:uppercase;letter-spacing:.04em; }
+    .dest-small-overlay p { font-size:13px;color:rgba(255,255,255,.65);margin-top:5px;line-height:1.45; }
+    .dest-small-tag { display:inline-block;background:rgba(43,191,189,.2);border:1px solid rgba(43,191,189,.4);color:var(--teal);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:1px;margin-bottom:8px;align-self:flex-start; }
+
+    /* REGION PANELS */
+    .region-panel { margin-top:3px;background:var(--navy);padding:clamp(32px,4vw,52px);display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px; }
+    .region-panel.light { background:white;border:1px solid #d8e2e9; }
+    .region-panel.muted { background:var(--ivory);border:1px solid #d8e2e9; }
+    .region-panel h3 { font-family:Sora,sans-serif;font-size:clamp(22px,2.8vw,36px);font-weight:800;text-transform:uppercase;letter-spacing:.04em; }
+    .region-panel p { font-size:15px;margin-top:8px;max-width:560px;line-height:1.65; }
+    .region-panel:not(.light):not(.muted) h3 { color:white; }
+    .region-panel:not(.light):not(.muted) p { color:rgba(255,255,255,.6); }
+    .region-panel.light h3, .region-panel.muted h3 { color:var(--navy); }
+    .region-panel.light p, .region-panel.muted p { color:var(--muted); }
+    .growth-tags { display:flex;flex-wrap:wrap;gap:8px;margin-top:14px; }
+    .growth-tag { font-size:12px;font-weight:700;color:var(--teal-mid);background:rgba(43,191,189,.1);border:1px solid rgba(43,191,189,.25);padding:5px 10px;border-radius:2px; }
+
+    /* CTA BAND */
+    .cta-band { padding:clamp(72px,9vw,112px) clamp(24px,5vw,76px);background:var(--navy);position:relative;overflow:hidden; }
+    .cta-band::before { content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(43,191,189,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(43,191,189,.04) 1px,transparent 1px);background-size:56px 56px; }
+    .cta-inner { max-width:640px;margin:0 auto;text-align:center;position:relative;z-index:1; }
+    .cta-band h2 { font-family:Sora,sans-serif;font-size:clamp(32px,4.5vw,58px);font-weight:800;text-transform:uppercase;letter-spacing:.04em;line-height:1.06;color:white;margin-bottom:18px; }
+    .cta-band h2 em { font-style:normal;color:var(--teal); }
+    .cta-band p { font-size:17px;line-height:1.72;color:rgba(255,255,255,.6);margin-bottom:36px; }
+    .cta-actions { display:flex;gap:14px;justify-content:center;flex-wrap:wrap; }
+
+    @media(max-width:900px){.dest-card-full{grid-template-columns:1fr;}.dest-card-full.reverse{direction:ltr;}.dest-img-panel{min-height:280px;aspect-ratio:16/9;}.dest-small-grid{grid-template-columns:1fr 1fr;}.dest-small-grid.two-col{grid-template-columns:1fr 1fr;}.dest-facts{grid-template-columns:1fr;}.region-panel{grid-template-columns:1fr;}}
+    @media(max-width:580px){.dest-small-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand"><span class="mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span></a>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="destinations.html" style="color:var(--teal-mid)">Destinations</a>
+    <a href="about.html">About</a><a href="faq.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions"><a class="consult-btn" href="contact.html">Book Free Consultation →</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span></button></div>
+</header>
+<nav id="mobileNav" class="mobile-nav">
+  <a href="index.html">Home</a><a href="services.html">Services</a><a href="destinations.html">Destinations</a>
+  <a href="about.html">About</a><a href="faq.html">FAQs</a><a href="blog.html">Blog</a>
+  <a href="contact.html" class="cta-link">Book Free Consultation →</a>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-tag">Study Destinations</div>
+      <h1>Five regions.<br><em>One trusted guide.</em></h1>
+      <p>Canada and the UK are our core strengths. We support applications across Europe, North America, Australia and New Zealand, Africa, and South Asia.</p>
+    </div>
+  </section>
+
+  <div class="dest-flags">
+    <div class="dest-flags-inner">
+      <div class="flag-group">
+        <span class="flag-group-label">Europe</span>
+        <div class="flag-group-items">
+          <div class="flag-item active"><span>🇬🇧</span> United Kingdom</div>
+          <div class="flag-item"><span>🇮🇪</span> Ireland</div>
+          <div class="flag-item"><span>🇩🇪</span> Germany</div>
+        </div>
+      </div>
+      <div class="flag-group">
+        <span class="flag-group-label">North America</span>
+        <div class="flag-group-items">
+          <div class="flag-item active"><span>🇨🇦</span> Canada</div>
+          <div class="flag-item"><span>🇺🇸</span> USA</div>
+        </div>
+      </div>
+      <div class="flag-group">
+        <span class="flag-group-label">Australia &amp; New Zealand</span>
+        <div class="flag-group-items">
+          <div class="flag-item"><span>🇦🇺</span> Australia</div>
+          <div class="flag-item"><span>🇳🇿</span> New Zealand</div>
+        </div>
+      </div>
+      <div class="flag-group">
+        <span class="flag-group-label">Africa</span>
+        <div class="flag-group-items">
+          <div class="flag-item"><span>🇬🇭</span> Ghana</div>
+        </div>
+      </div>
+      <div class="flag-group">
+        <span class="flag-group-label">South Asia</span>
+        <div class="flag-group-items">
+          <div class="flag-item"><span>🌏</span> Coming soon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="dest-section">
+    <div class="dest-inner">
+      <span class="section-label">Study Destinations</span>
+      <h2 class="section-heading" style="margin-bottom:clamp(40px,5vw,60px)">Where our students go.</h2>
+
+      <!-- EUROPE -->
+      <div class="region-block">
+        <div class="region-heading">
+          <span class="section-label">Europe</span>
+          <h3 class="section-heading" style="font-size:clamp(24px,3vw,36px);margin-top:8px">United Kingdom and growth markets.</h3>
+        </div>
+
+        <article class="dest-card-full">
+          <div class="dest-img-panel">
+            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=900&q=80" alt="UK university" loading="lazy" width="900" height="600"/>
+            <div class="dest-img-overlay"></div>
+          </div>
+          <div class="dest-content-panel">
+            <span class="dest-badge">Core Strength</span>
+            <h2>United Kingdom</h2>
+            <p>The UK's one-year Master's degree reduces total cost significantly compared to a two-year Canadian equivalent. The Graduate Route allows 2 years of post-study work if you apply on or before 31 December 2026, and 18 months if you apply on or after 1 January 2027.</p>
+            <div class="dest-facts">
+              <div class="fact-item"><strong>Best for</strong><span>Postgraduate, undergraduate, foundation</span></div>
+              <div class="fact-item"><strong>Work rights</strong><span>20 hrs/week, full-time during vacations</span></div>
+              <div class="fact-item"><strong>Key advantage</strong><span>One-year master's reduces total cost</span></div>
+              <div class="fact-item"><strong>Process time</strong><span>Admission: 2 to 6 weeks. Visa: 3 to 8 weeks</span></div>
+            </div>
+            <a href="contact.html" class="btn-teal" style="align-self:flex-start">Speak to a Counsellor <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <div class="region-panel muted">
+          <div>
+            <h3>🇪🇺 European Growth Markets</h3>
+            <p>Ireland, Germany, Hungary and the Netherlands are next on our active destination list. Enquire now if you are planning ahead for these pathways.</p>
+            <div class="growth-tags">
+              <span class="growth-tag">Ireland</span>
+              <span class="growth-tag">Germany</span>
+              <span class="growth-tag">Hungary</span>
+              <span class="growth-tag">Netherlands</span>
+            </div>
+          </div>
+          <a href="contact.html" class="btn-teal">Enquire Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- NORTH AMERICA -->
+      <div class="region-block">
+        <div class="region-heading">
+          <span class="section-label">North America</span>
+          <h3 class="section-heading" style="font-size:clamp(24px,3vw,36px);margin-top:8px">Canada and the United States.</h3>
+        </div>
+
+        <article class="dest-card-full">
+          <div class="dest-img-panel">
+            <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?auto=format&fit=crop&w=900&q=80" alt="Canada university campus" loading="lazy" width="900" height="600"/>
+            <div class="dest-img-overlay"></div>
+          </div>
+          <div class="dest-content-panel">
+            <span class="dest-badge">Top Destination</span>
+            <h2>Canada</h2>
+            <p>Canada is Alliance's strongest market. Georgian College and NIC Toronto are direct partner institutions, offering clear entry criteria, post-graduation work permits, and a defined pathway to permanent residence.</p>
+            <div class="dest-facts">
+              <div class="fact-item"><strong>Best for</strong><span>Diploma, PG certificate, undergraduate</span></div>
+              <div class="fact-item"><strong>Work rights</strong><span>Up to 24 hrs/week during regular school terms, full-time during breaks</span></div>
+              <div class="fact-item"><strong>Partner schools</strong><span>Georgian College, NIC Toronto</span></div>
+              <div class="fact-item"><strong>Process time</strong><span>Admission: 2 to 6 weeks. Visa: 4 to 12 weeks</span></div>
+            </div>
+            <a href="contact.html" class="btn-teal" style="align-self:flex-start">Speak to a Counsellor <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <div class="dest-small-grid" role="list" style="margin-top:3px">
+          <article class="dest-small" role="listitem">
+            <div class="dest-small-img"><img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=700&q=80" alt="USA university campus" loading="lazy" width="700" height="525"/></div>
+            <div class="dest-small-overlay">
+              <span class="dest-small-tag">Scholarship Focus</span>
+              <h3>USA</h3>
+              <p>World-leading universities. Scholarship opportunities for high achievers.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- AUSTRALIA & NEW ZEALAND -->
+      <div class="region-block">
+        <div class="region-heading">
+          <span class="section-label">Australia &amp; New Zealand</span>
+          <h3 class="section-heading" style="font-size:clamp(24px,3vw,36px);margin-top:8px">Strong programs and post-study options.</h3>
+        </div>
+
+        <div class="dest-small-grid two-col" role="list">
+          <article class="dest-small" role="listitem">
+            <div class="dest-small-img"><img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=700&q=80" alt="Sydney Opera House, Australia" loading="lazy" width="700" height="525"/></div>
+            <div class="dest-small-overlay">
+              <span class="dest-small-tag">Growing Market</span>
+              <h3>Australia</h3>
+              <p>Strong STEM programs. Work up to 48 hours per fortnight while your course is in session. Post-study work rights available.</p>
+            </div>
+          </article>
+          <article class="dest-small" role="listitem">
+            <div class="dest-small-img"><img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?auto=format&fit=crop&w=700&q=80" alt="New Zealand landscape" loading="lazy" width="700" height="525"/></div>
+            <div class="dest-small-overlay">
+              <span class="dest-small-tag">Welcoming Policies</span>
+              <h3>New Zealand</h3>
+              <p>Welcoming student policies. Work rights vary by visa type. We advise during your consultation.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- AFRICA -->
+      <div class="region-block">
+        <div class="region-heading">
+          <span class="section-label">Africa</span>
+          <h3 class="section-heading" style="font-size:clamp(24px,3vw,36px);margin-top:8px">Local admissions and profile building.</h3>
+        </div>
+
+        <div class="region-panel">
+          <div>
+            <h3>🇬🇭 Ghana — Local Admissions</h3>
+            <p>Alliance also supports students seeking admission within Ghana, particularly for those building their profile before an international application or pursuing a Ghana-based qualification.</p>
+          </div>
+          <a href="contact.html" class="btn-gold">Enquire Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- SOUTH ASIA -->
+      <div class="region-block">
+        <div class="region-heading">
+          <span class="section-label">South Asia</span>
+          <h3 class="section-heading" style="font-size:clamp(24px,3vw,36px);margin-top:8px">Expanding soon.</h3>
+        </div>
+
+        <div class="region-panel light">
+          <div>
+            <h3>🌏 South Asia — Coming Soon</h3>
+            <p>Alliance is expanding support for study pathways into South Asia. Register your interest now and we will notify you when applications open for this region.</p>
+          </div>
+          <a href="contact.html" class="btn-teal">Register Interest <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <p class="immigration-disclaimer">Immigration rules change frequently. We provide guidance based on current published rules and always verify requirements before submission.</p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="cta-inner">
+      <span class="section-label light">Not sure which country is right for you?</span>
+      <h2>That is exactly what the <em>free consultation</em> is for.</h2>
+      <p>We will match your profile, budget and goals to the destination that gives you the best realistic outcome.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-gold">Book Free Consultation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="https://wa.me/233552020381" class="btn-teal" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="footer-bottom-simple"><div class="footer-brand-row"><a href="index.html" class="brand"><span class="mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span></a></div><p class="footer-links-row"><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="destinations.html">Destinations</a> · <a href="about.html">About</a> · <a href="agents.html">Agents</a> · <a href="faq.html">FAQs</a> · <a href="contact.html">Contact</a></p><p class="footer-copy">© 2026 Alliance Educational Consult · <a href="tel:+233552020381">+233 552 020 381</a> · <a href="mailto:info@allianceeducationalconsult.com">info@allianceeducationalconsult.com</a></p></div></footer>
+<a href="https://wa.me/233552020381" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.14.562 4.148 1.546 5.879L0 24l6.29-1.524A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.213-3.733.905.944-3.635-.234-.374A9.818 9.818 0 0112 2.182c5.42 0 9.818 4.398 9.818 9.818S17.42 21.818 12 21.818z"/></svg></a>
+<script>
+  const menuBtn=document.getElementById('menuBtn'),mobileNav=document.getElementById('mobileNav');
+  menuBtn.addEventListener('click',()=>{const o=mobileNav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o);});
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+  document.addEventListener('click',e=>{if(mobileNav.classList.contains('open')&&!mobileNav.contains(e.target)&&!menuBtn.contains(e.target)){mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
+</script>
+</body>
+</html>
