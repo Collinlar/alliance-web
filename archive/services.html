@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Abroad Services | Alliance Educational Consult Ghana</title>
+  <meta name="description" content="Alliance offers study abroad counselling, visa documentation, SOP writing, refusal recovery, scholarship guidance, admissions support and pre-departure orientation. First consultation is free." />
+  <link rel="canonical" href="https://allianceeducationalconsult.com/services" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    /* PHOTO HERO */
+    .page-hero {
+      position:relative; overflow:hidden;
+      padding:clamp(100px,12vh,160px) clamp(24px,5vw,76px) clamp(80px,10vh,120px);
+      background:
+        linear-gradient(160deg, rgba(6,23,37,.86) 0%, rgba(13,99,100,.78) 55%, rgba(6,22,32,.94) 100%),
+        url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .page-hero::after { content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,23,37,.55) 0%,transparent 60%); }
+    .page-hero-inner { max-width:1460px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,6vw,80px);align-items:end; }
+    .page-tag { display:inline-flex;align-items:center;gap:8px;background:rgba(43,191,189,.14);border:1px solid rgba(43,191,189,.36);color:var(--teal);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:7px 14px;border-radius:2px;margin-bottom:24px; }
+    .page-hero h1 { font-family:Sora,sans-serif;font-size:clamp(48px,7vw,96px);font-weight:800;color:white;text-transform:uppercase;letter-spacing:.04em;line-height:.92; }
+    .page-hero h1 em { font-style:normal;color:var(--teal); }
+    .page-hero p { margin-top:28px;font-size:clamp(16px,1.3vw,18px);line-height:1.72;color:rgba(255,255,255,.72);max-width:520px; }
+    .hero-proof { display:flex;flex-direction:column;gap:14px; }
+    .proof-item { display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:14px 18px;border-radius:2px; }
+    .proof-num { font-family:Sora,sans-serif;font-size:clamp(28px,3vw,42px);font-weight:800;color:var(--teal);line-height:1;min-width:64px; }
+    .proof-text { font-size:13px;color:rgba(255,255,255,.68);line-height:1.45; }
+    .proof-text strong { display:block;color:white;font-size:14px;margin-bottom:2px; }
+
+    /* SERVICES GRID */
+    .services-section { padding:clamp(72px,9vw,112px) clamp(24px,5vw,76px); background:var(--ivory); }
+    .services-inner { max-width:1460px;margin:0 auto; }
+    .svc-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(6,23,37,.07);margin-top:clamp(48px,6vw,72px); }
+
+    .svc-card { background:white;padding:clamp(28px,3.5vw,44px);position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s; }
+    .svc-card::before { content:attr(data-num);position:absolute;top:-10px;right:16px;font-family:Sora,sans-serif;font-size:88px;font-weight:800;color:rgba(43,191,189,.07);line-height:1;transition:color .3s; }
+    .svc-card::after { content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .35s ease; }
+    .svc-card:hover { transform:translateY(-5px);box-shadow:0 24px 56px rgba(6,23,37,.13); }
+    .svc-card:hover::after { transform:scaleX(1); }
+    .svc-card:hover::before { color:rgba(43,191,189,.13); }
+
+    .svc-card.featured { background:var(--navy);color:white; }
+    .svc-card.featured::before { color:rgba(43,191,189,.1); }
+    .svc-card.featured::after { background:var(--gold); }
+    .svc-card.featured h3 { color:white; }
+    .svc-card.featured p { color:rgba(255,255,255,.62); }
+    .svc-card.featured .svc-who { color:var(--teal); }
+    .svc-card.featured .svc-free { color:var(--gold); }
+    .svc-badge { display:inline-block;background:var(--gold);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:1px;margin-bottom:14px; }
+
+    .svc-card h3 { font-family:Sora,sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);margin-bottom:10px;position:relative; }
+    .svc-card p { font-size:14px;line-height:1.75;color:var(--muted);position:relative; }
+    .svc-who { margin-top:14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal-mid);position:relative; }
+    .svc-free { display:inline-block;margin-top:10px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);position:relative; }
+
+    /* PROCESS BAND */
+    .process-band { padding:clamp(72px,9vw,112px) clamp(24px,5vw,76px);background:var(--navy);position:relative;overflow:hidden; }
+    .process-band::before { content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(43,191,189,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(43,191,189,.04) 1px,transparent 1px);background-size:56px 56px; }
+    .process-inner { max-width:1460px;margin:0 auto;position:relative;z-index:1; }
+    .steps { display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin-top:clamp(48px,6vw,72px); }
+    .steps::before { content:"";position:absolute;top:27px;left:calc(100%/12);right:calc(100%/12);height:1px;background:linear-gradient(90deg,var(--teal),var(--gold));z-index:0; }
+    .step { position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px; }
+    .step-dot { width:54px;height:54px;border-radius:50%;background:var(--navy-2);border:2px solid var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-family:Sora,sans-serif;font-size:17px;font-weight:700;color:var(--teal);transition:background .3s,border-color .3s; }
+    .step:hover .step-dot { background:var(--teal);color:var(--navy);border-color:var(--teal); }
+    .step h4 { font-size:13px;font-weight:700;color:white;margin-bottom:5px; }
+    .step p { font-size:12px;line-height:1.6;color:rgba(255,255,255,.5); }
+
+    /* CTA BAND */
+    .cta-band { padding:clamp(72px,9vw,112px) clamp(24px,5vw,76px);background:var(--ivory);text-align:center; }
+    .cta-band-inner { max-width:640px;margin:0 auto; }
+    .cta-band h2 { font-family:Sora,sans-serif;font-size:clamp(32px,4.5vw,58px);font-weight:800;text-transform:uppercase;letter-spacing:.04em;line-height:1.06;color:var(--navy); }
+    .cta-band h2 em { font-style:normal;color:var(--teal-mid); }
+    .cta-band p { font-size:17px;line-height:1.75;color:var(--muted);margin:18px auto 36px; }
+    .cta-actions { display:flex;gap:14px;justify-content:center;flex-wrap:wrap; }
+
+    @media(max-width:1100px){.svc-grid{grid-template-columns:repeat(2,1fr);}.steps{grid-template-columns:repeat(3,1fr);gap:28px;}.steps::before{display:none;}.page-hero-inner{grid-template-columns:1fr;}}
+    @media(max-width:680px){.svc-grid{grid-template-columns:1fr;}.steps{grid-template-columns:1fr 1fr;}}
+    @media(max-width:480px){.steps{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand"><span class="mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span></a>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="services.html" style="color:var(--teal-mid)">Services</a>
+    <a href="destinations.html">Destinations</a><a href="about.html">About</a>
+    <a href="faq.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions"><a class="consult-btn" href="contact.html">Book Free Consultation →</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span></button></div>
+</header>
+<nav id="mobileNav" class="mobile-nav">
+  <a href="index.html">Home</a><a href="services.html">Services</a><a href="destinations.html">Destinations</a>
+  <a href="about.html">About</a><a href="faq.html">FAQs</a><a href="blog.html">Blog</a>
+  <a href="contact.html" class="cta-link">Book Free Consultation →</a>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <div class="page-tag">Our Services</div>
+        <h1>Everything you need,<br><em>start to arrival.</em></h1>
+        <p>From your first free consultation to landing in your destination country. Every step, handled.</p>
+      </div>
+      <div class="hero-proof">
+        <div class="proof-item">
+          <span class="proof-num">89%</span>
+          <div class="proof-text"><strong>Visa approval rate</strong>89% across internally tracked supported visa applications, based on documented Alliance cases from 2020–2026. Results vary by applicant profile, destination, documentation quality, and immigration rules.</div>
+        </div>
+        <div class="proof-item">
+          <span class="proof-num">50+</span>
+          <div class="proof-text"><strong>Admissions secured</strong>Students placed in 6 countries</div>
+        </div>
+        <div class="proof-item">
+          <span class="proof-num">Free</span>
+          <div class="proof-text"><strong>First consultation</strong>Honest assessment, no obligation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="services-inner">
+      <span class="section-label">Full Service List</span>
+      <h2 class="section-heading">What Alliance does for you.</h2>
+      <div class="svc-grid" role="list">
+
+        <article class="svc-card featured" data-num="01" role="listitem">
+          <span class="svc-badge">Most Requested</span>
+          <h3>Visa Documentation Support</h3>
+          <p>Study plans, financial explanations and supporting documents prepared to align with current visa requirements and common officer concerns. The service that changes outcomes most.</p>
+          <p class="svc-who">For: Canada, UK, USA, Australia, New Zealand applicants</p>
+        </article>
+
+        <article class="svc-card" data-num="02" role="listitem">
+          <h3>Study Abroad Counselling</h3>
+          <p>Honest one-on-one guidance that matches your goals, budget and profile to the right destination. We tell you what is realistic.</p>
+          <p class="svc-who">For: All students</p>
+          <span class="svc-free">First session free</span>
+        </article>
+
+        <article class="svc-card" data-num="03" role="listitem">
+          <h3>Admission Application Support</h3>
+          <p>Full application handling from forms and transcripts to submission, including Georgian College and NIC Toronto in Canada and partner UK universities.</p>
+          <p class="svc-who">For: Undergraduate, postgraduate, diploma applicants</p>
+        </article>
+
+        <article class="svc-card" data-num="04" role="listitem">
+          <h3>SOP and Personal Statement</h3>
+          <p>Statements of purpose that read as authentic personal narratives. Written with you, not for you, so you understand every word you submit.</p>
+          <p class="svc-who">For: All applicants requiring personal statements</p>
+        </article>
+
+        <article class="svc-card" data-num="05" role="listitem">
+          <h3>Scholarship Guidance</h3>
+          <p>Scholarships, assistantships and low-cost pathways matched to your profile. Particularly valuable for high-achieving and USA-bound applicants.</p>
+          <p class="svc-who">For: High-achievers seeking reduced tuition</p>
+        </article>
+
+        <article class="svc-card" data-num="06" role="listitem">
+          <h3>Refusal Recovery Strategy</h3>
+          <p>Refusal analysis, documentation rebuilt from scratch, and a significantly stronger reapplication. Alliance's most specialised service.</p>
+          <p class="svc-who">For: Students with prior visa refusals</p>
+        </article>
+
+        <article class="svc-card" data-num="07" role="listitem">
+          <h3>Interview Preparation</h3>
+          <p>Mock interviews with coaching tailored to the specific questions each destination and institution uses. You will not be caught off-guard.</p>
+          <p class="svc-who">For: Visa interview and institution interview candidates</p>
+        </article>
+
+        <article class="svc-card" data-num="08" role="listitem">
+          <h3>Pre-Departure Orientation</h3>
+          <p>Travel logistics, accommodation, banking, work rights and cultural orientation. So you land prepared, not confused.</p>
+          <p class="svc-who">For: All students after visa approval</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="process-band">
+    <div class="process-inner">
+      <span class="section-label light">How It Works</span>
+      <h2 class="section-heading light" id="process-heading">From first call to <em>safe arrival.</em></h2>
+      <ol class="steps">
+        <li class="step"><div class="step-dot">1</div><h4>Free Consultation</h4><p>Goals, profile and budget reviewed. Honest pathway outlined.</p></li>
+        <li class="step"><div class="step-dot">2</div><h4>School Selection</h4><p>Institutions shortlisted by program, budget and admission strength.</p></li>
+        <li class="step"><div class="step-dot">3</div><h4>Application</h4><p>Full application handling, forms to submission.</p></li>
+        <li class="step"><div class="step-dot">4</div><h4>Visa Documentation</h4><p>Study plans, financial explanations and supporting documents aligned with current visa requirements.</p></li>
+        <li class="step"><div class="step-dot">5</div><h4>Pre-Departure</h4><p>Travel, accommodation, work rights. All covered.</p></li>
+        <li class="step"><div class="step-dot">6</div><h4>Safe Arrival</h4><p>Airport pickup coordination where available.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <span class="section-label">First Step</span>
+      <h2>Your first consultation is <em>free.</em></h2>
+      <p>Tell us where you want to go. We will give you an honest picture of your options and what it takes to get there.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-teal">Book Free Consultation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="https://wa.me/233552020381" class="btn-outline-dark" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="footer-bottom-simple"><div class="footer-brand-row"><a href="index.html" class="brand"><span class="mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span></a></div><p class="footer-links-row"><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="destinations.html">Destinations</a> · <a href="about.html">About</a> · <a href="agents.html">Agents</a> · <a href="faq.html">FAQs</a> · <a href="contact.html">Contact</a></p><p class="footer-copy">© 2026 Alliance Educational Consult · <a href="tel:+233552020381">+233 552 020 381</a> · <a href="mailto:info@allianceeducationalconsult.com">info@allianceeducationalconsult.com</a></p></div></footer>
+<a href="https://wa.me/233552020381" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.14.562 4.148 1.546 5.879L0 24l6.29-1.524A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.213-3.733.905.944-3.635-.234-.374A9.818 9.818 0 0112 2.182c5.42 0 9.818 4.398 9.818 9.818S17.42 21.818 12 21.818z"/></svg></a>
+<script>
+  const menuBtn=document.getElementById('menuBtn'),mobileNav=document.getElementById('mobileNav');
+  menuBtn.addEventListener('click',()=>{const o=mobileNav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o);});
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+  document.addEventListener('click',e=>{if(mobileNav.classList.contains('open')&&!mobileNav.contains(e.target)&&!menuBtn.contains(e.target)){mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
+</script>
+</body>
+</html>

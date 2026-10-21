@@ -1,222 +1,401 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="js">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Study Abroad Services | Alliance Educational Consult Ghana</title>
-  <meta name="description" content="Alliance offers study abroad counselling, visa documentation, SOP writing, refusal recovery, scholarship guidance, admissions support and pre-departure orientation. First consultation is free." />
-  <link rel="canonical" href="https://allianceeducationalconsult.com/services" />
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Alliance Educational Consult</title>
+  <meta name="description" content="Study abroad counselling, admissions, visa documentation, scholarships and pre-departure support, plus Canadian study permits, work permits, Express Entry and permanent residence through Purple Quartz Immigration Services." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://allianceeducationalconsult.com/services.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="v2-shared.css" />
+
   <style>
-    /* PHOTO HERO */
-    .page-hero {
-      position:relative; overflow:hidden;
-      padding:clamp(100px,12vh,160px) clamp(24px,5vw,76px) clamp(80px,10vh,120px);
-      background:
-        linear-gradient(160deg, rgba(6,23,37,.86) 0%, rgba(13,99,100,.78) 55%, rgba(6,22,32,.94) 100%),
-        url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    body { background: var(--ink); }
+    .wrap { width: min(1240px, 100% - clamp(40px, 10vw, 152px)); margin-inline: auto; }
+    .eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-soft); font-weight: 600; }
+    .display { font-family: var(--display); font-weight: 800; text-transform: uppercase; line-height: .9; letter-spacing: -.005em; }
+    .partner-note { font-size: 13.5px; line-height: 1.6; color: var(--text-3); max-width: 40em; }
+    .partner-note b { color: var(--text-2); font-weight: 600; }
+    .btn-line { display: inline-flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 0 20px; border: 1px solid var(--hair); border-radius: 3px; font-weight: 600; font-size: 15px; transition: border-color .2s, background .2s; }
+    .btn-line:hover { border-color: var(--gold); background: rgba(217,165,32,.08); }
+    .btn-gold.lg { min-height: 54px; padding: 0 28px; font-size: 16px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+    .js .rv { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--rd, 0) * 1s); }
+    .rv.in { opacity: 1; transform: none; }
+
+    /* HERO */
+    .hero { padding: clamp(56px, 9vw, 120px) 0 clamp(36px, 5vw, 64px); background:
+      radial-gradient(55% 80% at 100% 0%, rgba(43,191,189,.2), transparent 70%),
+      radial-gradient(45% 70% at 0% 100%, rgba(79,141,255,.14), transparent 70%), var(--ink); }
+    .hero h1 { font-size: clamp(60px, 10.5vw, 168px); margin-top: 16px; }
+    .hero h1 span { display: block; color: var(--teal); }
+    .hero p.lede { margin-top: 24px; font-size: clamp(17px, 1.6vw, 21px); color: var(--text-2); line-height: 1.55; max-width: 28em; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--hair); }
+    .stat { padding: 22px 20px 6px 0; }
+    .stat + .stat { padding-left: 24px; border-left: 1px solid var(--hair); }
+    .stat b { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(48px, 6vw, 92px); line-height: .9; }
+    .stat span { display: block; margin-top: 6px; font-size: 14px; color: var(--text-2); }
+    .fine { margin-top: 18px; font-size: 12.5px; color: var(--text-3); line-height: 1.55; max-width: 60em; }
+
+    /* FILTER + INDEX */
+    .index { padding: clamp(40px, 6vw, 72px) 0 clamp(64px, 10vw, 128px); border-top: 1px solid var(--hair); }
+    .filter-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 12px; }
+    .filter-bar h2 { font-size: clamp(36px, 4.6vw, 68px); }
+    .chips { display: inline-flex; border: 1px solid var(--hair); }
+    .chip { min-height: 48px; padding: 0 20px; font-size: 14.5px; font-weight: 600; color: var(--text-2); transition: background .25s, color .25s; }
+    .chip + .chip { border-left: 1px solid var(--hair); }
+    .chip:hover { background: rgba(255,255,255,.05); color: #fff; }
+    .chip[aria-pressed="true"] { background: var(--gold); color: #1b1304; }
+    .group-label { display: flex; align-items: center; gap: 16px; padding: 44px 0 14px; }
+    .group-label h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(30px, 3.4vw, 46px); line-height: 1; }
+    .group-label .tag { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+    .group-label::after { content: ""; flex: 1; height: 1px; background: var(--hair); }
+    .group-label.ca h3 { color: #8fb4ff; }
+    .group-label.st h3 { color: var(--teal); }
+
+    .svc { display: grid; grid-template-columns: 56px minmax(0, 4.4fr) minmax(0, 5.6fr) 44px; gap: 8px 28px; align-items: start; padding: 26px 0; border-top: 1px solid var(--hair); position: relative; transition: background .35s, padding .45s var(--ease); }
+    .svc:last-of-type { border-bottom: 1px solid var(--hair); }
+    .svc::before { content: ""; position: absolute; left: 0; top: 0; width: 0; height: 2px; background: var(--c, var(--teal)); transition: width .6s var(--ease); }
+    .svc.ca { --c: var(--blue); }
+    .svc:hover::before { width: 100%; }
+    .svc:hover { background: rgba(255,255,255,.025); padding-left: 12px; }
+    .svc .n { font-family: var(--display); font-weight: 800; font-size: 32px; line-height: 1; color: var(--c, var(--teal)); }
+    .svc h4 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(30px, 3.3vw, 46px); line-height: 1; }
+    .svc .badge { display: inline-block; margin-top: 12px; padding: 3px 9px; border: 1px solid var(--gold); color: var(--gold-soft); font-size: 11.5px; font-weight: 600; letter-spacing: .06em; }
+    .svc .badge.ca { border-color: var(--blue); color: #9dbdff; }
+    .svc p { font-size: 16px; line-height: 1.65; color: var(--text-2); max-width: 36em; }
+    .svc .for { display: block; margin-top: 12px; font-size: 13.5px; color: var(--text-3); line-height: 1.5; }
+    .svc .for b { color: var(--text-2); font-weight: 600; }
+    .svc .go { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--hair); display: grid; place-items: center; color: var(--c, var(--teal)); transition: background .25s, color .25s, transform .3s var(--ease); }
+    .svc:hover .go { background: var(--c, var(--teal)); color: #0a0f14; transform: translateX(4px); }
+    [data-g].is-hidden { display: none; }
+    .group-label.is-hidden { display: none; }
+    .svc.pop { animation: pop .55s var(--ease) both; }
+    @keyframes pop { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .index .partner-note { margin-top: 28px; }
+
+    /* HOW IT WORKS */
+    .how { padding: clamp(56px, 8vw, 104px) 0; background: linear-gradient(180deg, var(--ink), #07162a 50%, var(--ink)); border-block: 1px solid var(--hair); }
+    .how h2 { font-size: clamp(48px, 6.6vw, 104px); max-width: 9em; margin-top: 12px; }
+    .steps { list-style: none; counter-reset: s; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: clamp(32px, 5vw, 56px); border-top: 1px solid var(--hair); }
+    .steps li { counter-increment: s; padding: 26px 28px 30px 0; border-bottom: 1px solid var(--hair); position: relative; }
+    .steps li:not(:nth-child(3n+1)) { padding-left: 28px; border-left: 1px solid var(--hair); }
+    .steps li::before { content: counter(s, decimal-leading-zero); display: block; font-family: var(--display); font-weight: 800; font-size: clamp(54px, 5.4vw, 84px); line-height: .9; color: rgba(255,255,255,.14); transition: color .4s; }
+    .steps li:hover::before { color: var(--gold); }
+    .steps h3 { margin-top: 10px; font-size: 21px; font-weight: 600; }
+    .steps p { margin-top: 8px; font-size: 15px; color: var(--text-2); line-height: 1.6; max-width: 20em; }
+    .beyond { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-top: 36px; padding: 24px 28px; border: 1px solid rgba(79,141,255,.4); background: rgba(79,141,255,.07); }
+    .beyond h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(26px, 3vw, 40px); line-height: 1; }
+    .beyond p { margin-top: 8px; color: var(--text-2); font-size: 15.5px; max-width: 36em; line-height: 1.55; }
+
+    .close { position: relative; overflow: hidden; isolation: isolate; padding: clamp(64px, 9vw, 120px) 0; background: linear-gradient(120deg, #3a2b12, #1c1710 55%, #0c0a07); }
+    .close::after { content: ""; position: absolute; right: -4%; bottom: 0; width: clamp(120px, 16vw, 240px); height: 120%; transform: rotate(-12deg); transform-origin: bottom; background: linear-gradient(to top, rgba(217,165,32,.28), transparent); z-index: -1; }
+    .close h2 { font-size: clamp(52px, 8vw, 128px); max-width: 9em; }
+    .close p { margin-top: 18px; color: var(--text-2); font-size: 18px; max-width: 28em; line-height: 1.55; }
+
+    @media (max-width: 960px) {
+      .svc { grid-template-columns: 44px minmax(0, 1fr) 44px; }
+      .svc > div:nth-child(3) { grid-column: 2 / 3; grid-row: 2; }
+      .svc .go { grid-column: 3; grid-row: 1; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .steps li:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
+      .steps li:nth-child(even) { padding-left: 24px; border-left: 1px solid var(--hair); }
     }
-    .page-hero::after { content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,23,37,.55) 0%,transparent 60%); }
-    .page-hero-inner { max-width:1460px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,6vw,80px);align-items:end; }
-    .page-tag { display:inline-flex;align-items:center;gap:8px;background:rgba(43,191,189,.14);border:1px solid rgba(43,191,189,.36);color:var(--teal);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:7px 14px;border-radius:2px;margin-bottom:24px; }
-    .page-hero h1 { font-family:Sora,sans-serif;font-size:clamp(48px,7vw,96px);font-weight:800;color:white;text-transform:uppercase;letter-spacing:.04em;line-height:.92; }
-    .page-hero h1 em { font-style:normal;color:var(--teal); }
-    .page-hero p { margin-top:28px;font-size:clamp(16px,1.3vw,18px);line-height:1.72;color:rgba(255,255,255,.72);max-width:520px; }
-    .hero-proof { display:flex;flex-direction:column;gap:14px; }
-    .proof-item { display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:14px 18px;border-radius:2px; }
-    .proof-num { font-family:Sora,sans-serif;font-size:clamp(28px,3vw,42px);font-weight:800;color:var(--teal);line-height:1;min-width:64px; }
-    .proof-text { font-size:13px;color:rgba(255,255,255,.68);line-height:1.45; }
-    .proof-text strong { display:block;color:white;font-size:14px;margin-bottom:2px; }
-
-    /* SERVICES GRID */
-    .services-section { padding:clamp(72px,9vw,112px) clamp(24px,5vw,76px); background:var(--ivory); }
-    .services-inner { max-width:1460px;margin:0 auto; }
-    .svc-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(6,23,37,.07);margin-top:clamp(48px,6vw,72px); }
-
-    .svc-card { background:white;padding:clamp(28px,3.5vw,44px);position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s; }
-    .svc-card::before { content:attr(data-num);position:absolute;top:-10px;right:16px;font-family:Sora,sans-serif;font-size:88px;font-weight:800;color:rgba(43,191,189,.07);line-height:1;transition:color .3s; }
-    .svc-card::after { content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .35s ease; }
-    .svc-card:hover { transform:translateY(-5px);box-shadow:0 24px 56px rgba(6,23,37,.13); }
-    .svc-card:hover::after { transform:scaleX(1); }
-    .svc-card:hover::before { color:rgba(43,191,189,.13); }
-
-    .svc-card.featured { background:var(--navy);color:white; }
-    .svc-card.featured::before { color:rgba(43,191,189,.1); }
-    .svc-card.featured::after { background:var(--gold); }
-    .svc-card.featured h3 { color:white; }
-    .svc-card.featured p { color:rgba(255,255,255,.62); }
-    .svc-card.featured .svc-who { color:var(--teal); }
-    .svc-card.featured .svc-free { color:var(--gold); }
-    .svc-badge { display:inline-block;background:var(--gold);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:1px;margin-bottom:14px; }
-
-    .svc-card h3 { font-family:Sora,sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);margin-bottom:10px;position:relative; }
-    .svc-card p { font-size:14px;line-height:1.75;color:var(--muted);position:relative; }
-    .svc-who { margin-top:14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal-mid);position:relative; }
-    .svc-free { display:inline-block;margin-top:10px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);position:relative; }
-
-    /* PROCESS BAND */
-    .process-band { padding:clamp(72px,9vw,112px) clamp(24px,5vw,76px);background:var(--navy);position:relative;overflow:hidden; }
-    .process-band::before { content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(43,191,189,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(43,191,189,.04) 1px,transparent 1px);background-size:56px 56px; }
-    .process-inner { max-width:1460px;margin:0 auto;position:relative;z-index:1; }
-    .steps { display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin-top:clamp(48px,6vw,72px); }
-    .steps::before { content:"";position:absolute;top:27px;left:calc(100%/12);right:calc(100%/12);height:1px;background:linear-gradient(90deg,var(--teal),var(--gold));z-index:0; }
-    .step { position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px; }
-    .step-dot { width:54px;height:54px;border-radius:50%;background:var(--navy-2);border:2px solid var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-family:Sora,sans-serif;font-size:17px;font-weight:700;color:var(--teal);transition:background .3s,border-color .3s; }
-    .step:hover .step-dot { background:var(--teal);color:var(--navy);border-color:var(--teal); }
-    .step h4 { font-size:13px;font-weight:700;color:white;margin-bottom:5px; }
-    .step p { font-size:12px;line-height:1.6;color:rgba(255,255,255,.5); }
-
-    /* CTA BAND */
-    .cta-band { padding:clamp(72px,9vw,112px) clamp(24px,5vw,76px);background:var(--ivory);text-align:center; }
-    .cta-band-inner { max-width:640px;margin:0 auto; }
-    .cta-band h2 { font-family:Sora,sans-serif;font-size:clamp(32px,4.5vw,58px);font-weight:800;text-transform:uppercase;letter-spacing:.04em;line-height:1.06;color:var(--navy); }
-    .cta-band h2 em { font-style:normal;color:var(--teal-mid); }
-    .cta-band p { font-size:17px;line-height:1.75;color:var(--muted);margin:18px auto 36px; }
-    .cta-actions { display:flex;gap:14px;justify-content:center;flex-wrap:wrap; }
-
-    @media(max-width:1100px){.svc-grid{grid-template-columns:repeat(2,1fr);}.steps{grid-template-columns:repeat(3,1fr);gap:28px;}.steps::before{display:none;}.page-hero-inner{grid-template-columns:1fr;}}
-    @media(max-width:680px){.svc-grid{grid-template-columns:1fr;}.steps{grid-template-columns:1fr 1fr;}}
-    @media(max-width:480px){.steps{grid-template-columns:1fr;}}
+    @media (max-width: 640px) {
+      .stats { grid-template-columns: 1fr; }
+      .stat + .stat { padding-left: 0; border-left: 0; border-top: 1px solid var(--hair); margin-top: 16px; padding-top: 16px; }
+      .chips { width: 100%; }
+      .chip { flex: 1; padding: 0 8px; }
+      .steps { grid-template-columns: 1fr; }
+      .steps li:nth-child(even) { padding-left: 0; border-left: 0; }
+      .actions .btn-gold, .actions .btn-line { width: 100%; justify-content: space-between; }
+      .beyond .btn-line { width: 100%; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <a href="index.html" class="brand"><span class="mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span></a>
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="services.html" style="color:var(--teal-mid)">Services</a>
-    <a href="destinations.html">Destinations</a><a href="about.html">About</a>
-    <a href="faq.html">FAQs</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
-  </nav>
-  <div class="header-actions"><a class="consult-btn" href="contact.html">Book Free Consultation →</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span></button></div>
-</header>
-<nav id="mobileNav" class="mobile-nav">
-  <a href="index.html">Home</a><a href="services.html">Services</a><a href="destinations.html">Destinations</a>
-  <a href="about.html">About</a><a href="faq.html">FAQs</a><a href="blog.html">Blog</a>
-  <a href="contact.html" class="cta-link">Book Free Consultation →</a>
-</nav>
 
-<main>
-  <section class="page-hero">
-    <div class="page-hero-inner">
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="Alliance Educational Consult, home">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="services.html" aria-current="page">Services</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="canada-immigration.html" class="is-new">Canada Immigration</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Book a Consultation</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn-gold" href="contact.html"><span>Book<span class="hide-sm"> a Consultation</span></span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow rv">Our services</div>
+        <h1 class="display rv" style="--rd:.06">Everything you need,<span>start to arrival.</span></h1>
+        <p class="lede rv" style="--rd:.14">From your first free consultation to landing in your destination country, and now on to a Canadian permit or permanent residence. Every step, handled.</p>
+        <div class="stats rv" style="--rd:.2">
+          <div class="stat"><b>89%</b><span>Visa approval rate</span></div>
+          <div class="stat"><b>50+</b><span>Admissions secured, students placed in 6 countries</span></div>
+          <div class="stat"><b>Free</b><span>First consultation, honest assessment, no obligation</span></div>
+        </div>
+        <p class="fine rv" style="--rd:.24">89% across internally tracked supported visa applications, based on documented Alliance cases from 2020 to 2026. Results vary by applicant profile, destination, documentation quality and immigration rules.</p>
+      </div>
+    </section>
+
+    <section class="index" id="all" aria-labelledby="ih">
+      <div class="wrap">
+        <div class="filter-bar rv">
+          <h2 class="display" id="ih">What Alliance does for you</h2>
+          <div class="chips" role="group" aria-label="Filter services">
+            <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-f="study" aria-pressed="false">Study abroad</button>
+            <button class="chip" type="button" data-f="canada" aria-pressed="false">Canada immigration</button>
+          </div>
+        </div>
+
+        <div class="group-label st" data-g="study"><h3>Study abroad</h3><span class="tag">Alliance, Accra</span></div>
+
+        <a class="svc" data-g="study" href="contact.html">
+          <span class="n">01</span>
+          <div><h4>Visa Documentation Support</h4><span class="badge">Most requested</span></div>
+          <div><p>Study plans, financial explanations and supporting documents prepared to align with current visa requirements and common officer concerns. The service that changes outcomes most.</p><span class="for"><b>For:</b> Canada, UK, USA, Australia, New Zealand applicants</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc" data-g="study" href="contact.html">
+          <span class="n">02</span>
+          <div><h4>Study Abroad Counselling</h4><span class="badge">First session free</span></div>
+          <div><p>Honest one-on-one guidance that matches your goals, budget and profile to the right destination. We tell you what is realistic.</p><span class="for"><b>For:</b> All students</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc" data-g="study" href="contact.html">
+          <span class="n">03</span>
+          <div><h4>Admission Application Support</h4></div>
+          <div><p>Full application handling from forms and transcripts to submission, including Georgian College and NIC Toronto in Canada and partner UK universities.</p><span class="for"><b>For:</b> Undergraduate, postgraduate and diploma applicants</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc" data-g="study" href="contact.html">
+          <span class="n">04</span>
+          <div><h4>SOP and Personal Statement</h4></div>
+          <div><p>Statements of purpose that read as authentic personal narratives. Written with you, not for you, so you understand every word you submit.</p><span class="for"><b>For:</b> All applicants requiring personal statements</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc" data-g="study" href="contact.html">
+          <span class="n">05</span>
+          <div><h4>Scholarship Guidance</h4></div>
+          <div><p>Scholarships, assistantships and low-cost pathways matched to your profile. Particularly valuable for high-achieving and USA-bound applicants.</p><span class="for"><b>For:</b> High-achievers seeking reduced tuition</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc" data-g="study" href="contact.html">
+          <span class="n">06</span>
+          <div><h4>Refusal Recovery Strategy</h4></div>
+          <div><p>Refusal analysis, documentation rebuilt from scratch, and a significantly stronger reapplication. Alliance's most specialised service.</p><span class="for"><b>For:</b> Students with prior visa refusals</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc" data-g="study" href="contact.html">
+          <span class="n">07</span>
+          <div><h4>Interview Preparation</h4></div>
+          <div><p>Mock interviews with coaching tailored to the specific questions each destination and institution uses. You will not be caught off-guard.</p><span class="for"><b>For:</b> Visa interview and institution interview candidates</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc" data-g="study" href="contact.html">
+          <span class="n">08</span>
+          <div><h4>Pre-Departure Orientation</h4></div>
+          <div><p>Travel logistics, accommodation, banking, work rights and cultural orientation. So you land prepared, not confused.</p><span class="for"><b>For:</b> All students after visa approval</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <div class="group-label ca" data-g="canada"><h3>Canada immigration</h3><span class="tag">With Purple Quartz, led by Tomi Orojinmi, RCIC-IRB</span></div>
+
+        <a class="svc ca" data-g="canada" href="canada-immigration.html#study-permits">
+          <span class="n">09</span>
+          <div><h4>Study Permit</h4><span class="badge ca">New with Purple Quartz</span></div>
+          <div><p>Turn your Canadian admission into an approved permit. Application, proof of funds, study plan review and refusal recovery.</p><span class="for"><b>For:</b> Students admitted to a Canadian school</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc ca" data-g="canada" href="canada-immigration.html#work-permits">
+          <span class="n">10</span>
+          <div><h4>Work Permit</h4></div>
+          <div><p>The right work permit stream for your offer and your plan, including post-graduation work permit guidance, extensions and status changes.</p><span class="for"><b>For:</b> Graduates, job offer holders and workers in Canada</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc ca" data-g="canada" href="canada-immigration.html#visitor">
+          <span class="n">11</span>
+          <div><h4>Visitor / Temporary Residence</h4></div>
+          <div><p>Visitor visas, invitation letters, extensions and review after a refusal. Clear purpose, clear ties, complete documents.</p><span class="for"><b>For:</b> Families visiting Canada, business travellers, extended stays</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc ca" data-g="canada" href="canada-immigration.html#express-entry">
+          <span class="n">12</span>
+          <div><h4>Express Entry</h4></div>
+          <div><p>Eligibility check, profile and points review, and support through an invitation to apply across the Canadian Experience Class, skilled worker and trades streams.</p><span class="for"><b>For:</b> Skilled workers and graduates with Canadian experience</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc ca" data-g="canada" href="canada-immigration.html#permanent-residence">
+          <span class="n">13</span>
+          <div><h4>Permanent Residence</h4></div>
+          <div><p>A full profile assessment, programme strategy and a complete application for the long-term goal.</p><span class="for"><b>For:</b> Anyone planning to build a life in Canada</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="svc ca" data-g="canada" href="canada-immigration.html#family-sponsorship">
+          <span class="n">14</span>
+          <div><h4>Family Sponsorship</h4></div>
+          <div><p>Sponsor and applicant eligibility, relationship evidence and a consistent application for spouses, partners, children, parents and grandparents.</p><span class="for"><b>For:</b> Families with a member in Canada</span></div>
+          <span class="go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <p class="partner-note" data-g="canada">Canadian immigration services delivered in partnership with <b>Purple Quartz Immigration Services</b> and led by Tomi Orojinmi, RCIC-IRB.</p>
+      </div>
+    </section>
+
+    <section class="how" aria-labelledby="hh">
+      <div class="wrap">
+        <div class="eyebrow rv">How it works</div>
+        <h2 class="display rv" id="hh" style="--rd:.06">From first call to safe arrival</h2>
+        <ol class="steps rv" style="--rd:.1">
+          <li><h3>Free consultation</h3><p>Goals, profile and budget reviewed. Honest pathway outlined.</p></li>
+          <li><h3>School selection</h3><p>Institutions shortlisted by programme, budget and admission strength.</p></li>
+          <li><h3>Application</h3><p>Full application handling, forms to submission.</p></li>
+          <li><h3>Visa documentation</h3><p>Study plans, financial explanations and supporting documents aligned with current visa requirements.</p></li>
+          <li><h3>Pre-departure</h3><p>Travel, accommodation, work rights. All covered.</p></li>
+          <li><h3>Safe arrival</h3><p>Airport pickup coordination where available.</p></li>
+        </ol>
+        <div class="beyond rv" style="--rd:.14">
+          <div>
+            <h3>And after you land</h3>
+            <p>Studying in Canada? Your file continues with Purple Quartz into a post-graduation work permit, Express Entry and permanent residence.</p>
+          </div>
+          <a class="btn-line" href="canada-immigration.html">See Canada pathways
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="close" aria-labelledby="ch">
+      <div class="wrap">
+        <div class="eyebrow rv">First step</div>
+        <h2 class="display rv" id="ch" style="--rd:.06">Your first consultation is free.</h2>
+        <p class="rv" style="--rd:.12">Tell us where you want to go. We will give you an honest picture of your options and what it takes to get there.</p>
+        <div class="actions rv" style="--rd:.18">
+          <a class="btn-gold lg" href="contact.html">Book Free Consultation
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn-line" href="https://wa.me/233552020381" target="_blank" rel="noopener">WhatsApp us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="f-grid">
       <div>
-        <div class="page-tag">Our Services</div>
-        <h1>Everything you need,<br><em>start to arrival.</em></h1>
-        <p>From your first free consultation to landing in your destination country. Every step, handled.</p>
+        <a class="brand" href="index.html" aria-label="Alliance Educational Consult, home">
+          <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span>
+        </a>
+        <p class="f-tag">Study globally. Move confidently. Build your future.</p>
       </div>
-      <div class="hero-proof">
-        <div class="proof-item">
-          <span class="proof-num">89%</span>
-          <div class="proof-text"><strong>Visa approval rate</strong>89% across internally tracked supported visa applications, based on documented Alliance cases from 2020–2026. Results vary by applicant profile, destination, documentation quality, and immigration rules.</div>
+      <div>
+        <h3>Study Abroad</h3>
+        <ul>
+          <li><a href="destinations.html#canada">Study in Canada</a></li>
+          <li><a href="destinations.html#uk">Study in UK</a></li>
+          <li><a href="destinations.html#usa">Study in USA</a></li>
+          <li><a href="destinations.html#australia">Study in Australia</a></li>
+          <li><a href="destinations.html#new-zealand">Study in New Zealand</a></li>
+          <li><a href="destinations.html">Study in Ghana</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Canada Immigration</h3>
+        <ul>
+          <li><a href="canada-immigration.html#study-permits">Study Permits</a></li>
+          <li><a href="canada-immigration.html#work-permits">Work Permits</a></li>
+          <li><a href="canada-immigration.html#visitor">Visitor / Temporary Residence</a></li>
+          <li><a href="canada-immigration.html#permanent-residence">Permanent Residence</a></li>
+          <li><a href="canada-immigration.html#express-entry">Express Entry</a></li>
+          <li><a href="canada-immigration.html#family-sponsorship">Family Sponsorship</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#team">Our Team</a></li>
+          <li><a href="blog.html">Resources</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="loc-col">
+        <div class="loc">
+          <div class="loc-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <div><b>Accra, Ghana</b>19th Kofi Annan Street, Airport Residential Area</div>
+          </div>
+          <div class="loc-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <div><b>London, Ontario, Canada</b>Purple Quartz Immigration Services</div>
+          </div>
         </div>
-        <div class="proof-item">
-          <span class="proof-num">50+</span>
-          <div class="proof-text"><strong>Admissions secured</strong>Students placed in 6 countries</div>
-        </div>
-        <div class="proof-item">
-          <span class="proof-num">Free</span>
-          <div class="proof-text"><strong>First consultation</strong>Honest assessment, no obligation</div>
-        </div>
+        <p class="f-partner">Canadian immigration services delivered in partnership with <b>Purple Quartz Immigration Services</b>.</p>
       </div>
     </div>
-  </section>
-
-  <section class="services-section">
-    <div class="services-inner">
-      <span class="section-label">Full Service List</span>
-      <h2 class="section-heading">What Alliance does for you.</h2>
-      <div class="svc-grid" role="list">
-
-        <article class="svc-card featured" data-num="01" role="listitem">
-          <span class="svc-badge">Most Requested</span>
-          <h3>Visa Documentation Support</h3>
-          <p>Study plans, financial explanations and supporting documents prepared to align with current visa requirements and common officer concerns. The service that changes outcomes most.</p>
-          <p class="svc-who">For: Canada, UK, USA, Australia, New Zealand applicants</p>
-        </article>
-
-        <article class="svc-card" data-num="02" role="listitem">
-          <h3>Study Abroad Counselling</h3>
-          <p>Honest one-on-one guidance that matches your goals, budget and profile to the right destination. We tell you what is realistic.</p>
-          <p class="svc-who">For: All students</p>
-          <span class="svc-free">First session free</span>
-        </article>
-
-        <article class="svc-card" data-num="03" role="listitem">
-          <h3>Admission Application Support</h3>
-          <p>Full application handling from forms and transcripts to submission, including Georgian College and NIC Toronto in Canada and partner UK universities.</p>
-          <p class="svc-who">For: Undergraduate, postgraduate, diploma applicants</p>
-        </article>
-
-        <article class="svc-card" data-num="04" role="listitem">
-          <h3>SOP and Personal Statement</h3>
-          <p>Statements of purpose that read as authentic personal narratives. Written with you, not for you, so you understand every word you submit.</p>
-          <p class="svc-who">For: All applicants requiring personal statements</p>
-        </article>
-
-        <article class="svc-card" data-num="05" role="listitem">
-          <h3>Scholarship Guidance</h3>
-          <p>Scholarships, assistantships and low-cost pathways matched to your profile. Particularly valuable for high-achieving and USA-bound applicants.</p>
-          <p class="svc-who">For: High-achievers seeking reduced tuition</p>
-        </article>
-
-        <article class="svc-card" data-num="06" role="listitem">
-          <h3>Refusal Recovery Strategy</h3>
-          <p>Refusal analysis, documentation rebuilt from scratch, and a significantly stronger reapplication. Alliance's most specialised service.</p>
-          <p class="svc-who">For: Students with prior visa refusals</p>
-        </article>
-
-        <article class="svc-card" data-num="07" role="listitem">
-          <h3>Interview Preparation</h3>
-          <p>Mock interviews with coaching tailored to the specific questions each destination and institution uses. You will not be caught off-guard.</p>
-          <p class="svc-who">For: Visa interview and institution interview candidates</p>
-        </article>
-
-        <article class="svc-card" data-num="08" role="listitem">
-          <h3>Pre-Departure Orientation</h3>
-          <p>Travel logistics, accommodation, banking, work rights and cultural orientation. So you land prepared, not confused.</p>
-          <p class="svc-who">For: All students after visa approval</p>
-        </article>
-
-      </div>
+    <div class="f-bottom">
+      <span>&copy; 2026 Alliance Educational Consult. All Rights Reserved.</span>
+      
     </div>
-  </section>
+  </footer>
 
-  <section class="process-band">
-    <div class="process-inner">
-      <span class="section-label light">How It Works</span>
-      <h2 class="section-heading light" id="process-heading">From first call to <em>safe arrival.</em></h2>
-      <ol class="steps">
-        <li class="step"><div class="step-dot">1</div><h4>Free Consultation</h4><p>Goals, profile and budget reviewed. Honest pathway outlined.</p></li>
-        <li class="step"><div class="step-dot">2</div><h4>School Selection</h4><p>Institutions shortlisted by program, budget and admission strength.</p></li>
-        <li class="step"><div class="step-dot">3</div><h4>Application</h4><p>Full application handling, forms to submission.</p></li>
-        <li class="step"><div class="step-dot">4</div><h4>Visa Documentation</h4><p>Study plans, financial explanations and supporting documents aligned with current visa requirements.</p></li>
-        <li class="step"><div class="step-dot">5</div><h4>Pre-Departure</h4><p>Travel, accommodation, work rights. All covered.</p></li>
-        <li class="step"><div class="step-dot">6</div><h4>Safe Arrival</h4><p>Airport pickup coordination where available.</p></li>
-      </ol>
-    </div>
-  </section>
+  <script>
+    (function () {
+      var menuBtn = document.getElementById('menuBtn'), nav = document.getElementById('nav');
+      function setMenu(open) {
+        nav.classList.toggle('is-open', open);
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      menuBtn.addEventListener('click', function () { setMenu(!nav.classList.contains('is-open')); });
+      nav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+      var mq = window.matchMedia('(max-width: 860px)');
+      if (mq.addEventListener) mq.addEventListener('change', function () { setMenu(false); });
 
-  <section class="cta-band">
-    <div class="cta-band-inner">
-      <span class="section-label">First Step</span>
-      <h2>Your first consultation is <em>free.</em></h2>
-      <p>Tell us where you want to go. We will give you an honest picture of your options and what it takes to get there.</p>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn-teal">Book Free Consultation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="https://wa.me/233552020381" class="btn-outline-dark" target="_blank" rel="noopener">WhatsApp Us</a>
-      </div>
-    </div>
-  </section>
-</main>
+      var items = [].slice.call(document.querySelectorAll('.rv'));
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: .08, rootMargin: '0px 0px -4% 0px' });
+        items.forEach(function (el) { io.observe(el); });
+      } else { items.forEach(function (el) { el.classList.add('in'); }); }
 
-<footer class="footer"><div class="footer-bottom-simple"><div class="footer-brand-row"><a href="index.html" class="brand"><span class="mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span></a></div><p class="footer-links-row"><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="destinations.html">Destinations</a> · <a href="about.html">About</a> · <a href="agents.html">Agents</a> · <a href="faq.html">FAQs</a> · <a href="contact.html">Contact</a></p><p class="footer-copy">© 2026 Alliance Educational Consult · <a href="tel:+233552020381">+233 552 020 381</a> · <a href="mailto:info@allianceeducationalconsult.com">info@allianceeducationalconsult.com</a></p></div></footer>
-<a href="https://wa.me/233552020381" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.14.562 4.148 1.546 5.879L0 24l6.29-1.524A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.213-3.733.905.944-3.635-.234-.374A9.818 9.818 0 0112 2.182c5.42 0 9.818 4.398 9.818 9.818S17.42 21.818 12 21.818z"/></svg></a>
-<script>
-  const menuBtn=document.getElementById('menuBtn'),mobileNav=document.getElementById('mobileNav');
-  menuBtn.addEventListener('click',()=>{const o=mobileNav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o);});
-  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
-  document.addEventListener('click',e=>{if(mobileNav.classList.contains('open')&&!mobileNav.contains(e.target)&&!menuBtn.contains(e.target)){mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
-</script>
+      /* Filter */
+      var chips = [].slice.call(document.querySelectorAll('.chip'));
+      var rows = [].slice.call(document.querySelectorAll('[data-g]'));
+      function apply(f, animate) {
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.f === f ? 'true' : 'false'); });
+        var n = 0;
+        rows.forEach(function (r) {
+          var show = f === 'all' || r.dataset.g === f;
+          r.classList.toggle('is-hidden', !show);
+          r.classList.remove('pop');
+          if (show && animate) { void r.offsetWidth; r.style.animationDelay = (n++ * 0.04) + 's'; r.classList.add('pop'); }
+        });
+      }
+      chips.forEach(function (c) { c.addEventListener('click', function () { apply(c.dataset.f, true); }); });
+      var h = location.hash.replace('#', '');
+      if (h === 'canada' || h === 'study') apply(h, false);
+    })();
+  </script>
 </body>
 </html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Alliance Educational Consult | Ghana Study Abroad Brokerage</title>
+  <meta name="description" content="Founded in 2020 by Kwame Odame, Alliance Educational Consult is Ghana's registered study-abroad brokerage. Honest counselling, expert documentation, end-to-end support." />
+  <link rel="canonical" href="https://allianceeducationalconsult.com/about" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About Alliance Educational Consult","url":"https://allianceeducationalconsult.com/about","description":"Founded in 2020 by Kwame Odame, Alliance Educational Consult is Ghana's registered study-abroad brokerage specialising in visa documentation, refusal recovery and scholarship guidance."}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    /* PHOTO HERO */
+    .page-hero {
+      position: relative; overflow: hidden;
+      padding: clamp(100px,12vh,160px) clamp(24px,5vw,76px) clamp(80px,10vh,120px);
+      background:
+        linear-gradient(165deg, rgba(6,23,37,.88) 0%, rgba(11,42,62,.82) 55%, rgba(6,22,32,.92) 100%),
+        url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .page-hero::after {
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(0deg, rgba(6,23,37,.6) 0%, transparent 60%);
+    }
+    .page-hero-inner { max-width:1460px; margin:0 auto; position:relative; z-index:1; }
+    .page-tag { display:inline-flex;align-items:center;gap:8px;background:rgba(43,191,189,.14);border:1px solid rgba(43,191,189,.36);color:var(--teal);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:7px 14px;border-radius:2px;margin-bottom:24px; }
+    .page-hero h1 { font-family:Sora,sans-serif;font-size:clamp(48px,7vw,96px);font-weight:800;color:white;text-transform:uppercase;letter-spacing:.04em;line-height:.92;max-width:760px; }
+    .page-hero h1 em { font-style:normal;color:var(--teal); }
+    .page-hero p { margin-top:28px;font-size:clamp(16px,1.3vw,19px);line-height:1.72;color:rgba(255,255,255,.72);max-width:560px; }
+
+    /* STATS BAND */
+    .stats-band {
+      background: var(--deep-teal);
+      padding: clamp(40px,5vw,64px) clamp(24px,5vw,76px);
+    }
+    .stats-band-inner { max-width:1460px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+    .stats-footnote { max-width:860px; margin:0 auto; padding:20px clamp(24px,5vw,76px) 0; font-size:13px; line-height:1.65; color:var(--muted); text-align:center; }
+    .stat-item { padding:clamp(24px,3vw,40px); border-right:1px solid rgba(255,255,255,.14); text-align:center; }
+    .stat-item:last-child { border-right:0; }
+    .stat-num { display:block; font-family:Sora,sans-serif; font-size:clamp(48px,6vw,80px); font-weight:800; color:white; line-height:1; letter-spacing:-.02em; }
+    .stat-num.counted { color: var(--teal); }
+    .stat-item span { font-size:13px; color:rgba(255,255,255,.6); margin-top:8px; display:block; letter-spacing:.04em; text-transform:uppercase; }
+
+    /* STORY */
+    .about-story { padding:clamp(72px,9vw,120px) clamp(24px,5vw,76px); background:var(--ivory); }
+    .about-grid { max-width:1460px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:clamp(48px,6vw,100px); align-items:center; }
+    .story-label { font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-mid);display:block;margin-bottom:14px; }
+    .story-heading { font-family:Sora,sans-serif;font-size:clamp(36px,4.5vw,60px);font-weight:800;text-transform:uppercase;letter-spacing:.03em;line-height:1.04;color:var(--navy); }
+    .story-heading em { font-style:normal;color:var(--teal-mid); }
+    .about-body { font-size:16px;line-height:1.82;color:#3A5060;margin-top:18px; }
+    .about-body + .about-body { margin-top:14px; }
+    .mission-block { margin-top:28px;padding:22px 24px;background:white;border-left:3px solid var(--teal);border-radius:0 2px 2px 0; }
+    .mission-block p { font-size:14px;line-height:1.72;color:var(--navy); }
+    .mission-block p + p { margin-top:10px; }
+    .mission-block strong { color:var(--teal-mid); }
+
+    .about-img { position:relative; }
+    .about-img-main { border-radius:3px; overflow:hidden; aspect-ratio:4/3; }
+    .about-img-main img { width:100%;height:100%;object-fit:cover;transition:transform .6s ease; }
+    .about-img-main:hover img { transform:scale(1.04); }
+    .about-float {
+      position:absolute; bottom:-24px; left:-24px;
+      background:var(--navy); color:white; padding:24px 28px; border-radius:2px; max-width:240px;
+      box-shadow: 0 20px 48px rgba(6,23,37,.28);
+    }
+    .about-float strong { display:block;font-family:Sora,sans-serif;font-size:14px;color:var(--teal);margin-bottom:6px;line-height:1.3; }
+    .about-float p { font-size:13px;line-height:1.65;color:rgba(255,255,255,.68); }
+
+    /* VALUES */
+    .values { padding:clamp(72px,9vw,120px) clamp(24px,5vw,76px); background:white; }
+    .values-inner { max-width:1460px; margin:0 auto; }
+    .values-header { display:grid;grid-template-columns:1fr 1.8fr;gap:clamp(32px,5vw,72px);align-items:end;margin-bottom:clamp(40px,5vw,64px); }
+    .values-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; }
+    .value-card {
+      background:var(--ivory); padding:clamp(24px,3vw,36px);
+      border-top:3px solid var(--teal); position:relative; overflow:hidden;
+      transition:transform .25s, box-shadow .25s;
+    }
+    .value-card::before { content:attr(data-num);position:absolute;top:-8px;right:12px;font-family:Sora,sans-serif;font-size:72px;font-weight:800;color:rgba(43,191,189,.08);line-height:1; }
+    .value-card:hover { transform:translateY(-5px); box-shadow:0 20px 48px rgba(6,23,37,.1); }
+    .value-card h3 { font-family:Sora,sans-serif;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);margin-bottom:10px;position:relative; }
+    .value-card p { font-size:14px;line-height:1.72;color:var(--muted);position:relative; }
+
+    /* TEAM / REGISTRATION BAND */
+    .reg-band { background:var(--navy); padding:clamp(48px,6vw,80px) clamp(24px,5vw,76px); }
+    .reg-inner { max-width:1460px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,6vw,96px);align-items:center; }
+    .reg-content h2 { font-family:Sora,sans-serif;font-size:clamp(28px,3.5vw,48px);font-weight:800;text-transform:uppercase;letter-spacing:.04em;line-height:1.06;color:white;margin-bottom:18px; }
+    .reg-content h2 em { font-style:normal;color:var(--teal); }
+    .reg-content p { font-size:15px;line-height:1.75;color:rgba(255,255,255,.65);margin-bottom:14px; }
+    .reg-details { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+    .reg-item { background:rgba(255,255,255,.06);border:1px solid rgba(43,191,189,.16);padding:16px 18px;border-radius:2px; }
+    .reg-item strong { display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:5px; }
+    .reg-item span { font-size:14px;color:rgba(255,255,255,.7); }
+
+    @media(max-width:1100px) { .values-grid{grid-template-columns:repeat(3,1fr);} .stats-band-inner{grid-template-columns:repeat(2,1fr);} .values-header{grid-template-columns:1fr;} .reg-inner{grid-template-columns:1fr;} }
+    @media(max-width:768px) { .about-grid{grid-template-columns:1fr;} .about-float{display:none;} .values-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:580px) { .values-grid{grid-template-columns:1fr;} .stats-band-inner{grid-template-columns:1fr 1fr;} .reg-details{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="brand"><span class="mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span></a>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="about.html" style="color:var(--teal-mid)">About</a>
+    <a href="faq.html">FAQs</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-actions"><a class="consult-btn" href="contact.html">Book Free Consultation →</a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span></button></div>
+</header>
+<nav id="mobileNav" class="mobile-nav">
+  <a href="index.html">Home</a><a href="services.html">Services</a><a href="destinations.html">Destinations</a>
+  <a href="about.html">About</a><a href="faq.html">FAQs</a><a href="blog.html">Blog</a>
+  <a href="contact.html" class="cta-link">Book Free Consultation →</a>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-tag">About Alliance</div>
+      <h1>Built on <em>honesty.</em><br>Proven by results.</h1>
+      <p>Founded in Accra in 2020 by Kwame Odame, Alliance Educational Consult grew out of a simple conviction: capable Ghanaian students deserve honest guidance, not false promises and avoidable refusals.</p>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <div class="stats-band" aria-label="Alliance track record">
+    <div class="stats-band-inner">
+      <div class="stat-item">
+        <strong class="stat-num" data-target="50" data-suffix="+">50+</strong>
+        <span>Admissions secured</span>
+      </div>
+      <div class="stat-item">
+        <strong class="stat-num" data-target="89" data-suffix="%">89%</strong>
+        <span>Visa approval rate</span>
+      </div>
+      <div class="stat-item">
+        <strong class="stat-num" data-target="20" data-suffix="+">20+</strong>
+        <span>Approved visas and permits</span>
+      </div>
+      <div class="stat-item">
+        <strong class="stat-num" data-target="6" data-suffix="">6</strong>
+        <span>Countries students placed in</span>
+      </div>
+    </div>
+  </div>
+  <p class="stats-footnote">89% approval rate across internally tracked supported visa applications, based on documented Alliance cases from 2020–2026. Results vary by applicant profile, destination, documentation quality, and immigration rules.</p>
+
+  <!-- STORY -->
+  <section class="about-story">
+    <div class="about-grid">
+      <div>
+        <span class="story-label">The Story</span>
+        <h2 class="story-heading">Why <em>Alliance</em> exists.</h2>
+        <p class="about-body">Kwame Odame spent years watching capable Ghanaian students get let down by agents who collected fees regardless of outcome. Copied SOPs. Poorly prepared financials. Wrong school choices. Avoidable refusals.</p>
+        <p class="about-body">Alliance was built to be the opposite. A registered firm that tells you the truth about your profile and walks with you from first enquiry to safe arrival.</p>
+        <div class="mission-block">
+          <p><strong>Mission:</strong> To open genuine global education pathways for African students through honest advice, accurate documentation and dependable support.</p>
+          <p><strong>Vision:</strong> To become West Africa's most trusted educational brokerage network, connecting students and partner agents to opportunities worldwide.</p>
+        </div>
+        <a href="contact.html" class="btn-teal" style="margin-top:32px;display:inline-flex;align-items:center;gap:10px;">Book a Free Consultation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="about-img">
+        <div class="about-img-main">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Alliance counsellor working with a student" loading="lazy" width="900" height="675" />
+        </div>
+        <div class="about-float">
+          <strong>"Alliance told me the truth."</strong>
+          <p>When other agents gave me false hope, Alliance gave me a plan that actually worked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+    <div class="values-inner">
+      <div class="values-header">
+        <div>
+          <span class="section-label">Our Values</span>
+          <h2 class="section-heading">What we <em>stand on.</em></h2>
+        </div>
+        <p style="font-size:16px;line-height:1.78;color:var(--muted);max-width:560px;">Five principles. Every client, every document, every outcome.</p>
+      </div>
+      <div class="values-grid">
+        <article class="value-card" data-num="01"><h3>Integrity</h3><p>We tell students the truth about their profile, even when it is not what they want to hear.</p></article>
+        <article class="value-card" data-num="02"><h3>Accuracy</h3><p>Every document is built to the exact standard the visa officer expects. No shortcuts.</p></article>
+        <article class="value-card" data-num="03"><h3>Student First</h3><p>We will not process an application we believe is not ready.</p></article>
+        <article class="value-card" data-num="04"><h3>Partnership</h3><p>We walk with the student from first enquiry to safe arrival.</p></article>
+        <article class="value-card" data-num="05"><h3>Professionalism</h3><p>Registered, structured, accountable. A firm — not an informal middleman.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION BAND -->
+  <section class="reg-band">
+    <div class="reg-inner">
+      <div class="reg-content">
+        <h2>Formally registered. <em>Fully accountable.</em></h2>
+        <p>Alliance is a business formally registered with the Registrar General's Department of Ghana. A legal name, a tax identification number, and a documented track record you can verify.</p>
+        <a href="contact.html" class="btn-gold" style="display:inline-flex;align-items:center;gap:10px;margin-top:8px;">Start the conversation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="reg-details">
+        <div class="reg-item"><strong>Trading Name</strong><span>Alliance Educational Consult</span></div>
+        <div class="reg-item"><strong>Legal Name</strong><span>Internal Greenwich Educational Consulting Services</span></div>
+        <div class="reg-item"><strong>Registration No.</strong><span>BN000ZC2020</span></div>
+        <div class="reg-item"><strong>TIN</strong><span>P0005471656</span></div>
+        <div class="reg-item"><strong>Date Registered</strong><span>17 November 2020</span></div>
+        <div class="reg-item"><strong>Location</strong><span>Airport Residential Area, Accra, Ghana</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-bottom-simple">
+    <div class="footer-brand-row"><a href="index.html" class="brand"><span class="mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-text"><strong>ALLIANCE</strong><small>Educational Consult</small></span></a></div>
+    <p class="footer-links-row"><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="destinations.html">Destinations</a> · <a href="about.html">About</a> · <a href="agents.html">Agents</a> · <a href="faq.html">FAQs</a> · <a href="contact.html">Contact</a></p>
+    <p class="footer-copy">© 2026 Alliance Educational Consult · <a href="tel:+233552020381">+233 552 020 381</a> · <a href="mailto:info@allianceeducationalconsult.com">info@allianceeducationalconsult.com</a></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/233552020381" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.14.562 4.148 1.546 5.879L0 24l6.29-1.524A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.213-3.733.905.944-3.635-.234-.374A9.818 9.818 0 0112 2.182c5.42 0 9.818 4.398 9.818 9.818S17.42 21.818 12 21.818z"/></svg></a>
+
+<script>
+  // Mobile nav
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => { const o=mobileNav.classList.toggle('open'); menuBtn.setAttribute('aria-expanded',o); });
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+  document.addEventListener('click',e=>{if(mobileNav.classList.contains('open')&&!mobileNav.contains(e.target)&&!menuBtn.contains(e.target)){mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
+
+  // Counter animation
+  const counters = document.querySelectorAll('.stat-num[data-target]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      let start = 0;
+      const duration = 1800;
+      const step = Math.ceil(target / (duration / 16));
+      const timer = setInterval(() => {
+        start = Math.min(start + step, target);
+        el.textContent = start + suffix;
+        if (start >= target) { clearInterval(timer); el.classList.add('counted'); }
+      }, 16);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => observer.observe(c));
+</script>
+</body>
+</html>
